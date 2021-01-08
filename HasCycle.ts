@@ -1,12 +1,9 @@
-class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(x: number, next: ListNode | null) {
-    this.val = x;
-    this.next = next;
-  }
-}
+import ListNode from "./base/ListNode";
 
+/**
+ * 判断链表是否有环
+ * @param head 链表头节点
+ */
 export function hasCycle(head: ListNode): boolean {
   if (!head) return false;
   const items = <ListNode[]>[];

@@ -1,10 +1,8 @@
-import ListNode from "./ListNode";
+import ListNode from "./base/ListNode";
 
 /**
- * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
- *
- * @param head ListNode类
- * @return ListNode类
+ * 反转链表
+ * @param head 链表头节点
  */
 export function reverseList(head: ListNode): ListNode | null {
   if (!head) return head;
@@ -22,12 +20,19 @@ function reverse(lastItem: ListNode, currentItem: ListNode | null): ListNode {
   return reverse(currentItem, nextItem);
 }
 
-let result = reverseList(
-  new ListNode(1, new ListNode(2, new ListNode(3, null)))
-);
-if (result) {
-  do {
-    console.log(result.val);
-    result = result.next;
-  } while (result);
+/**
+ * 测试
+ */
+function test() {
+  let result = reverseList(
+    new ListNode(1, new ListNode(2, new ListNode(3, null)))
+  );
+  if (result) {
+    do {
+      console.log(result.val);
+      result = result.next;
+    } while (result);
+  }
 }
+
+test();
